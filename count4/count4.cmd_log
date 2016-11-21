@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "D:/ISE/count4/count4.xst" -ofn "D:/ISE/count4/count4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-vq100-4 count4.ngc count4.ngd  
+map -intstyle ise -p xc3s100e-vq100-4 -cm area -ir off -pr off -c 100 -o count4_map.ncd count4.ngd count4.pcf 
+par -w -intstyle ise -ol high -t 1 count4_map.ncd count4.ncd count4.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml count4.twx count4.ncd -o count4.twr count4.pcf 
