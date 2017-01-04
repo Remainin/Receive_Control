@@ -1,0 +1,5 @@
+V3 3
+FL D:/ISE/reg8/reg8.vhd 2016/07/08.16:22:00 O.87xd
+EN work/reg8 1467966122 FL D:/ISE/reg8/reg8.vhd PB ieee/std_logic_1164 1325952872
+AR work/reg8/main 1467966123 \
+      FL D:/ISE/reg8/reg8.vhd EN work/reg8 1467966122

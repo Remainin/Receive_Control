@@ -1,0 +1,2 @@
+vhdl isim_temp "reg8.vhd"
+vhdl isim_temp "test.vhd"

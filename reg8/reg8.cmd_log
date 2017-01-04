@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "D:/ISE/reg8/reg8.xst" -ofn "D:/ISE/reg8/reg8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-vq100-4 reg8.ngc reg8.ngd  
+map -intstyle ise -p xc3s100e-vq100-4 -cm area -ir off -pr off -c 100 -o reg8_map.ncd reg8.ngd reg8.pcf 
+par -w -intstyle ise -ol high -t 1 reg8_map.ncd reg8.ncd reg8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml reg8.twx reg8.ncd -o reg8.twr reg8.pcf 
