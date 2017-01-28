@@ -1,0 +1,19 @@
+Running: D:\Xilinx\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o D:/ISE/sreg/bench_isim_beh.exe -prj D:/ISE/sreg/bench_beh.prj work.bench 
+ISim O.87xd (signature 0xc3576ebc)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "D:/ISE/sreg/sreg.vhd" into library work
+Parsing VHDL file "D:/ISE/sreg/bench.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling architecture main of entity sreg [sreg_default]
+Compiling architecture behavior of entity bench
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 5 VHDL Units
+Built simulation executable D:/ISE/sreg/bench_isim_beh.exe
+Fuse Memory Usage: 29064 KB
+Fuse CPU Usage: 436 ms

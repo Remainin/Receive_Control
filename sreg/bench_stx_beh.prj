@@ -1,0 +1,2 @@
+vhdl isim_temp "sreg.vhd"
+vhdl isim_temp "bench.vhd"

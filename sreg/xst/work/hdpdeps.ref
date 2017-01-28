@@ -1,0 +1,5 @@
+V3 3
+FL D:/ISE/sreg/sreg.vhd 2016/07/08.17:01:26 O.87xd
+EN work/sreg 1467968490 FL D:/ISE/sreg/sreg.vhd PB ieee/std_logic_1164 1325952872
+AR work/sreg/main 1467968491 \
+      FL D:/ISE/sreg/sreg.vhd EN work/sreg 1467968490
