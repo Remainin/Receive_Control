@@ -1,0 +1,382 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 1995-2003 Xilinx, Inc.
+-- All Right Reserved.
+--------------------------------------------------------------------------------
+--   ____  ____ 
+--  /   /\/   / 
+-- /___/  \  /    Vendor: Xilinx 
+-- \   \   \/     Version : 9.1i
+--  \   \         Application : ISE
+--  /   /         Filename : waveOfreceive.ant
+-- /___/   /\     Timestamp : Wed Oct 17 14:06:34 2012
+-- \   \  /  \ 
+--  \___\/\___\ 
+--
+--Command: 
+--Design Name: waveOfreceive
+--Device: Xilinx
+--
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE IEEE.STD_LOGIC_TEXTIO.ALL;
+USE STD.TEXTIO.ALL;
+
+ENTITY waveOfreceive IS
+END waveOfreceive;
+
+ARCHITECTURE testbench_arch OF waveOfreceive IS
+    FILE RESULTS: TEXT OPEN WRITE_MODE IS "E:\receive\waveOfreceive.ano";
+
+    COMPONENT receive
+        PORT (
+            serialdata : In std_logic;
+            clk : In std_logic;
+            csn : In std_logic;
+            wrn : In std_logic;
+            rdn : In std_logic;
+            addr : In std_logic_vector (1 DownTo 0);
+            data : InOut std_logic_vector (7 DownTo 0);
+            intn : Out std_logic
+        );
+    END COMPONENT;
+
+    SIGNAL serialdata : std_logic := '1';
+    SIGNAL clk : std_logic := '0';
+    SIGNAL csn : std_logic := '1';
+    SIGNAL wrn : std_logic := '1';
+    SIGNAL rdn : std_logic := '1';
+    SIGNAL addr : std_logic_vector (1 DownTo 0) := "00";
+    SIGNAL data : std_logic_vector (7 DownTo 0) := "ZZZZZZZZ";
+    SIGNAL intn : std_logic := '0';
+
+    SHARED VARIABLE TX_ERROR : INTEGER := 0;
+    SHARED VARIABLE TX_OUT : LINE;
+
+    constant PERIOD : time := 200 ns;
+    constant DUTY_CYCLE : real := 0.5;
+    constant OFFSET : time := 0 ns;
+
+    BEGIN
+        UUT : receive
+        PORT MAP (
+            serialdata => serialdata,
+            clk => clk,
+            csn => csn,
+            wrn => wrn,
+            rdn => rdn,
+            addr => addr,
+            data => data,
+            intn => intn
+        );
+
+        PROCESS    -- clock process for clk
+        BEGIN
+            WAIT for OFFSET;
+            CLOCK_LOOP : LOOP
+                clk <= '0';
+                WAIT FOR (PERIOD - (PERIOD * DUTY_CYCLE));
+                clk <= '1';
+                WAIT FOR (PERIOD * DUTY_CYCLE);
+            END LOOP CLOCK_LOOP;
+        END PROCESS;
+
+        PROCESS    -- Annotation process for clk
+            VARIABLE TX_TIME : INTEGER := 0;
+
+            PROCEDURE ANNOTATE_intn(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", intn, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, intn);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+        BEGIN
+            WAIT for 1 fs;
+            ANNOTATE_intn(0);
+            WAIT for OFFSET;
+            TX_TIME := TX_TIME + 0;
+            ANNO_LOOP : LOOP
+                --Falling Edge
+                WAIT for 15 ns;
+                TX_TIME := TX_TIME + 15;
+                ANNOTATE_intn(TX_TIME);
+                WAIT for 185 ns;
+                TX_TIME := TX_TIME + 185;
+            END LOOP ANNO_LOOP;
+        END PROCESS;
+
+        PROCESS
+            BEGIN
+                -- -------------  Current Time:  185ns
+                WAIT FOR 185 ns;
+                csn <= '0';
+                wrn <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  385ns
+                WAIT FOR 200 ns;
+                csn <= '1';
+                wrn <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  585ns
+                WAIT FOR 200 ns;
+                csn <= '0';
+                wrn <= '0';
+                addr <= "01";
+                -- -------------------------------------
+                -- -------------  Current Time:  785ns
+                WAIT FOR 200 ns;
+                csn <= '1';
+                wrn <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  985ns
+                WAIT FOR 200 ns;
+                csn <= '0';
+                wrn <= '0';
+                addr <= "10";
+                -- -------------------------------------
+                -- -------------  Current Time:  1185ns
+                WAIT FOR 200 ns;
+                csn <= '1';
+                wrn <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  1385ns
+                WAIT FOR 200 ns;
+                csn <= '0';
+                wrn <= '0';
+                addr <= "11";
+                -- -------------------------------------
+                -- -------------  Current Time:  1585ns
+                WAIT FOR 200 ns;
+                csn <= '1';
+                wrn <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  1785ns
+                WAIT FOR 200 ns;
+                serialdata <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  1985ns
+                WAIT FOR 200 ns;
+                serialdata <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  2585ns
+                WAIT FOR 600 ns;
+                serialdata <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  2785ns
+                WAIT FOR 200 ns;
+                serialdata <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  2985ns
+                WAIT FOR 200 ns;
+                serialdata <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  3185ns
+                WAIT FOR 200 ns;
+                serialdata <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  3385ns
+                WAIT FOR 200 ns;
+                serialdata <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  3585ns
+                WAIT FOR 200 ns;
+                serialdata <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  4185ns
+                WAIT FOR 600 ns;
+                csn <= '0';
+                rdn <= '0';
+                addr <= "01";
+                -- -------------------------------------
+                -- -------------  Current Time:  4385ns
+                WAIT FOR 200 ns;
+                csn <= '1';
+                rdn <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  5185ns
+                WAIT FOR 800 ns;
+                csn <= '0';
+                rdn <= '0';
+                addr <= "00";
+                -- -------------------------------------
+                -- -------------  Current Time:  5385ns
+                WAIT FOR 200 ns;
+                csn <= '1';
+                rdn <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  5785ns
+                WAIT FOR 400 ns;
+                csn <= '0';
+                wrn <= '0';
+                addr <= "01";
+                -- -------------------------------------
+                -- -------------  Current Time:  5985ns
+                WAIT FOR 200 ns;
+                csn <= '1';
+                wrn <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  6185ns
+                WAIT FOR 200 ns;
+                csn <= '0';
+                rdn <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  6385ns
+                WAIT FOR 200 ns;
+                serialdata <= '0';
+                csn <= '1';
+                rdn <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  6585ns
+                WAIT FOR 200 ns;
+                serialdata <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  7185ns
+                WAIT FOR 600 ns;
+                serialdata <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  7385ns
+                WAIT FOR 200 ns;
+                serialdata <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  7585ns
+                WAIT FOR 200 ns;
+                serialdata <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  7785ns
+                WAIT FOR 200 ns;
+                serialdata <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  7985ns
+                WAIT FOR 200 ns;
+                serialdata <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  8385ns
+                WAIT FOR 400 ns;
+                serialdata <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  9585ns
+                WAIT FOR 1200 ns;
+                csn <= '0';
+                rdn <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  9785ns
+                WAIT FOR 200 ns;
+                csn <= '1';
+                rdn <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  10185ns
+                WAIT FOR 400 ns;
+                csn <= '0';
+                wrn <= '0';
+                addr <= "10";
+                -- -------------------------------------
+                -- -------------  Current Time:  10385ns
+                WAIT FOR 200 ns;
+                csn <= '1';
+                wrn <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  10585ns
+                WAIT FOR 200 ns;
+                csn <= '0';
+                wrn <= '0';
+                addr <= "01";
+                -- -------------------------------------
+                -- -------------  Current Time:  10785ns
+                WAIT FOR 200 ns;
+                csn <= '1';
+                wrn <= '1';
+                addr <= "10";
+                -- -------------------------------------
+                -- -------------  Current Time:  10985ns
+                WAIT FOR 200 ns;
+                csn <= '0';
+                rdn <= '0';
+                addr <= "01";
+                -- -------------------------------------
+                -- -------------  Current Time:  11185ns
+                WAIT FOR 200 ns;
+                csn <= '1';
+                rdn <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  11785ns
+                WAIT FOR 600 ns;
+                serialdata <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  11985ns
+                WAIT FOR 200 ns;
+                serialdata <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  12585ns
+                WAIT FOR 600 ns;
+                serialdata <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  12785ns
+                WAIT FOR 200 ns;
+                serialdata <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  12985ns
+                WAIT FOR 200 ns;
+                serialdata <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  13185ns
+                WAIT FOR 200 ns;
+                serialdata <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  13385ns
+                WAIT FOR 200 ns;
+                serialdata <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  13585ns
+                WAIT FOR 200 ns;
+                serialdata <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  14385ns
+                WAIT FOR 800 ns;
+                csn <= '0';
+                rdn <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  14585ns
+                WAIT FOR 200 ns;
+                csn <= '1';
+                rdn <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  15185ns
+                WAIT FOR 600 ns;
+                serialdata <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  15385ns
+                WAIT FOR 200 ns;
+                serialdata <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  15785ns
+                WAIT FOR 400 ns;
+                csn <= '0';
+                rdn <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  15985ns
+                WAIT FOR 200 ns;
+                csn <= '1';
+                rdn <= '1';
+                -- -------------------------------------
+                WAIT FOR 4215 ns;
+
+                STD.TEXTIO.write(TX_OUT, string'("Total[]"));
+                STD.TEXTIO.writeline(RESULTS, TX_OUT);
+                ASSERT (FALSE) REPORT
+                    "Success! Simulation for annotation completed"
+                    SEVERITY FAILURE;
+            END PROCESS;
+
+    END testbench_arch;
+

@@ -1,0 +1,719 @@
+Release 13.4 - xst O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Reading design: receive.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "receive.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "receive"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-pq208
+
+---- Source Options
+Top Module Name                    : receive
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "E:/xilink/5/receive/count4.vhd" in Library work.
+Entity <count4> compiled.
+Entity <count4> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "E:/xilink/5/receive/sreg.vhd" in Library work.
+Entity <sreg> compiled.
+Entity <sreg> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "E:/xilink/5/receive/reg8.vhd" in Library work.
+Entity <reg8> compiled.
+Entity <reg8> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "E:/xilink/5/receive/decode4.vhd" in Library work.
+Entity <decode4> compiled.
+Entity <decode4> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "E:/xilink/5/receive/ctrl.vhd" in Library work.
+Entity <ctrl> compiled.
+Entity <ctrl> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "E:/xilink/5/receive/receive.vhd" in Library work.
+Entity <receive> compiled.
+Entity <receive> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <receive> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <count4> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <sreg> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <reg8> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <decode4> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <ctrl> in library <work> (architecture <Behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <receive> in library <work> (Architecture <Behavioral>).
+Entity <receive> analyzed. Unit <receive> generated.
+
+Analyzing Entity <count4> in library <work> (Architecture <Behavioral>).
+Entity <count4> analyzed. Unit <count4> generated.
+
+Analyzing Entity <sreg> in library <work> (Architecture <Behavioral>).
+Entity <sreg> analyzed. Unit <sreg> generated.
+
+Analyzing Entity <reg8> in library <work> (Architecture <Behavioral>).
+Entity <reg8> analyzed. Unit <reg8> generated.
+
+Analyzing Entity <decode4> in library <work> (Architecture <Behavioral>).
+Entity <decode4> analyzed. Unit <decode4> generated.
+
+Analyzing Entity <ctrl> in library <work> (Architecture <Behavioral>).
+WARNING:Xst:819 - "E:/xilink/5/receive/ctrl.vhd" line 52: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <addr>
+WARNING:Xst:819 - "E:/xilink/5/receive/ctrl.vhd" line 70: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <addr>
+Entity <ctrl> analyzed. Unit <ctrl> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <count4>.
+    Related source file is "E:/xilink/5/receive/count4.vhd".
+    Found 4-bit register for signal <q>.
+    Found 32-bit up counter for signal <num>.
+    Found 4-bit adder for signal <q$add0000> created at line 50.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <count4> synthesized.
+
+
+Synthesizing Unit <sreg>.
+    Related source file is "E:/xilink/5/receive/sreg.vhd".
+    Found 8-bit register for signal <t>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <sreg> synthesized.
+
+
+Synthesizing Unit <reg8>.
+    Related source file is "E:/xilink/5/receive/reg8.vhd".
+    Found 8-bit register for signal <q>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <reg8> synthesized.
+
+
+Synthesizing Unit <decode4>.
+    Related source file is "E:/xilink/5/receive/decode4.vhd".
+Unit <decode4> synthesized.
+
+
+Synthesizing Unit <ctrl>.
+    Related source file is "E:/xilink/5/receive/ctrl.vhd".
+WARNING:Xst:737 - Found 1-bit latch for signal <rint>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <rbuff>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <clrint1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <clrint2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <clrint3>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <clrn>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 1-bit register for signal <start>.
+    Found 8-bit tristate buffer for signal <data>.
+    Found 1-bit register for signal <buff>.
+    Found 1-bit xor9 for signal <odd>.
+    Found 1-bit register for signal <oerr>.
+    Found 1-bit register for signal <perr>.
+    Found 1-bit register for signal <startm>.
+    Summary:
+	inferred   5 D-type flip-flop(s).
+	inferred   1 Xor(s).
+	inferred   8 Tristate(s).
+Unit <ctrl> synthesized.
+
+
+Synthesizing Unit <receive>.
+    Related source file is "E:/xilink/5/receive/receive.vhd".
+Unit <receive> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 4-bit adder                                           : 1
+# Counters                                             : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 15
+ 1-bit register                                        : 13
+ 4-bit register                                        : 1
+ 8-bit register                                        : 1
+# Latches                                              : 6
+ 1-bit latch                                           : 6
+# Tristates                                            : 8
+ 1-bit tristate buffer                                 : 8
+# Xors                                                 : 1
+ 1-bit xor9                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 4-bit adder                                           : 1
+# Counters                                             : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 25
+ Flip-Flops                                            : 25
+# Latches                                              : 6
+ 1-bit latch                                           : 6
+# Xors                                                 : 1
+ 1-bit xor9                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <u1/num_4> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_5> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_6> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_7> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_8> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_9> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_10> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_11> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_12> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_13> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_14> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_15> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_16> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_17> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_18> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_19> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_20> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_21> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_22> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_23> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_24> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_25> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_26> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_27> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_28> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_29> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_30> of sequential type is unconnected in block <receive>.
+WARNING:Xst:2677 - Node <u1/num_31> of sequential type is unconnected in block <receive>.
+
+Optimizing unit <receive> ...
+
+Optimizing unit <sreg> ...
+
+Optimizing unit <reg8> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block receive, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 29
+ Flip-Flops                                            : 29
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : receive.ngr
+Top Level Output File Name         : receive
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 16
+
+Cell Usage :
+# BELS                             : 56
+#      GND                         : 1
+#      INV                         : 9
+#      LUT1                        : 3
+#      LUT2                        : 12
+#      LUT3                        : 5
+#      LUT4                        : 13
+#      MUXCY                       : 3
+#      MUXF5                       : 5
+#      VCC                         : 1
+#      XORCY                       : 4
+# FlipFlops/Latches                : 35
+#      FDC                         : 25
+#      FDC_1                       : 4
+#      LD                          : 4
+#      LDP                         : 1
+#      LDP_1                       : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 15
+#      IBUF                        : 6
+#      OBUF                        : 1
+#      OBUFT                       : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500epq208-4 
+
+ Number of Slices:                       27  out of   4656     0%  
+ Number of Slice Flip Flops:             35  out of   9312     0%  
+ Number of 4 input LUTs:                 42  out of   9312     0%  
+ Number of IOs:                          16
+ Number of bonded IOBs:                  16  out of    158    10%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------------+------------------------+-------+
+Clock Signal                             | Clock buffer(FF name)  | Load  |
+-----------------------------------------+------------------------+-------+
+clk                                      | BUFGP                  | 17    |
+u5/rint_cmp_eq0000(u5/rint_cmp_eq00001:O)| NONE(*)(u5/rint)       | 1     |
+u5/rbuff_not0001(u5/rbuff_not00011:O)    | NONE(*)(u5/rbuff)      | 1     |
+u5/clrint1_not0001(u5/clrint1_not00011:O)| NONE(*)(u5/clrint1)    | 1     |
+u5/clrint2_not0001(u5/clrint2_not00011:O)| NONE(*)(u5/clrint2)    | 1     |
+u5/clrint3_not0001(u5/clrint3_not00011:O)| NONE(*)(u5/clrint3)    | 1     |
+u5/clrn_not0001(u5/clrn_not00011:O)      | NONE(*)(u5/clrn)       | 1     |
+u5/startm                                | NONE(u5/oerr)          | 2     |
+t11(u4/q11_f5:O)                         | NONE(*)(u5/buff)       | 1     |
+t9(u4/q9_f5:O)                           | NONE(*)(u5/perr)       | 1     |
+t8(u4/q8_f5:O)                           | NONE(*)(u3/q_7)        | 8     |
+-----------------------------------------+------------------------+-------+
+(*) These 9 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+----------------------------------------+------------------------+-------+
+Control Signal                          | Buffer(FF name)        | Load  |
+----------------------------------------+------------------------+-------+
+start_inv(u2/clrn_inv1_INV_0:O)         | NONE(u1/num_0)         | 16    |
+u3/clrn_inv(u5/clrn_inv1_INV_0:O)       | NONE(u3/q_0)           | 9     |
+u5/rint_not0001(u5/rint_not00011:O)     | NONE(u5/rbuff)         | 2     |
+u5/clrint1_inv(u5/clrint1_inv1_INV_0:O) | NONE(u5/buff)          | 1     |
+u5/clrint2_inv(u5/clrint2_inv1_INV_0:O) | NONE(u5/perr)          | 1     |
+u5/clrint3_inv(u5/clrint3_inv1_INV_0:O) | NONE(u5/oerr)          | 1     |
+u5/start_not0001_inv(u5/start_or00001:O)| NONE(u5/start)         | 1     |
+----------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 3.692ns (Maximum Frequency: 270.856MHz)
+   Minimum input arrival time before clock: 3.097ns
+   Maximum output required time after clock: 6.308ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.692ns (frequency: 270.856MHz)
+  Total number of paths / destination ports: 27 / 15
+-------------------------------------------------------------------------
+Delay:               3.692ns (Levels of Logic = 4)
+  Source:            u1/num_1 (FF)
+  Destination:       u1/num_3 (FF)
+  Source Clock:      clk falling
+  Destination Clock: clk falling
+
+  Data Path: u1/num_1 to u1/num_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              4   0.591   0.762  u1/num_1 (u1/num_1)
+     LUT1:I0->O            1   0.704   0.000  u1/Mcount_num_cy<1>_rt (u1/Mcount_num_cy<1>_rt)
+     MUXCY:S->O            1   0.464   0.000  u1/Mcount_num_cy<1> (u1/Mcount_num_cy<1>)
+     MUXCY:CI->O           0   0.059   0.000  u1/Mcount_num_cy<2> (u1/Mcount_num_cy<2>)
+     XORCY:CI->O           1   0.804   0.000  u1/Mcount_num_xor<3> (Result<3>)
+     FDC:D                     0.308          u1/num_3
+    ----------------------------------------
+    Total                      3.692ns (2.930ns logic, 0.762ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'u5/clrint1_not0001'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              3.074ns (Levels of Logic = 2)
+  Source:            csn (PAD)
+  Destination:       u5/clrint1 (LATCH)
+  Destination Clock: u5/clrint1_not0001 falling
+
+  Data Path: csn to u5/clrint1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.218   0.844  csn_IBUF (csn_IBUF)
+     LUT2:I0->O            4   0.704   0.000  u5/clrint1_mux00011 (u5/clrint1_mux0001)
+     LD:D                      0.308          u5/clrint1
+    ----------------------------------------
+    Total                      3.074ns (2.230ns logic, 0.844ns route)
+                                       (72.5% logic, 27.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'u5/clrint2_not0001'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              3.074ns (Levels of Logic = 2)
+  Source:            csn (PAD)
+  Destination:       u5/clrint2 (LATCH)
+  Destination Clock: u5/clrint2_not0001 falling
+
+  Data Path: csn to u5/clrint2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.218   0.844  csn_IBUF (csn_IBUF)
+     LUT2:I0->O            4   0.704   0.000  u5/clrint1_mux00011 (u5/clrint1_mux0001)
+     LD:D                      0.308          u5/clrint2
+    ----------------------------------------
+    Total                      3.074ns (2.230ns logic, 0.844ns route)
+                                       (72.5% logic, 27.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'u5/clrint3_not0001'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              3.074ns (Levels of Logic = 2)
+  Source:            csn (PAD)
+  Destination:       u5/clrint3 (LATCH)
+  Destination Clock: u5/clrint3_not0001 falling
+
+  Data Path: csn to u5/clrint3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.218   0.844  csn_IBUF (csn_IBUF)
+     LUT2:I0->O            4   0.704   0.000  u5/clrint1_mux00011 (u5/clrint1_mux0001)
+     LD:D                      0.308          u5/clrint3
+    ----------------------------------------
+    Total                      3.074ns (2.230ns logic, 0.844ns route)
+                                       (72.5% logic, 27.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'u5/clrn_not0001'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              3.074ns (Levels of Logic = 2)
+  Source:            csn (PAD)
+  Destination:       u5/clrn (LATCH)
+  Destination Clock: u5/clrn_not0001 falling
+
+  Data Path: csn to u5/clrn
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.218   0.844  csn_IBUF (csn_IBUF)
+     LUT2:I0->O            4   0.704   0.000  u5/clrint1_mux00011 (u5/clrint1_mux0001)
+     LD:D                      0.308          u5/clrn
+    ----------------------------------------
+    Total                      3.074ns (2.230ns logic, 0.844ns route)
+                                       (72.5% logic, 27.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              3.097ns (Levels of Logic = 2)
+  Source:            serialdata (PAD)
+  Destination:       u5/startm (FF)
+  Destination Clock: clk rising
+
+  Data Path: serialdata to u5/startm
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.447  serialdata_IBUF (serialdata_IBUF)
+     INV:I->O              1   0.704   0.420  u5/startm_not00011_INV_0 (u5/startm_not0001)
+     FDC:D                     0.308          u5/startm
+    ----------------------------------------
+    Total                      3.097ns (2.230ns logic, 0.867ns route)
+                                       (72.0% logic, 28.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 't9'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              5.609ns (Levels of Logic = 2)
+  Source:            u5/perr (FF)
+  Destination:       intn (PAD)
+  Source Clock:      t9 rising
+
+  Data Path: u5/perr to intn
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.591   0.622  u5/perr (u5/perr)
+     LUT3:I0->O            1   0.704   0.420  u5/intn1 (intn_OBUF)
+     OBUF:I->O                 3.272          intn_OBUF (intn)
+    ----------------------------------------
+    Total                      5.609ns (4.567ns logic, 1.042ns route)
+                                       (81.4% logic, 18.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'u5/startm'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              5.513ns (Levels of Logic = 2)
+  Source:            u5/oerr (FF)
+  Destination:       intn (PAD)
+  Source Clock:      u5/startm rising
+
+  Data Path: u5/oerr to intn
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.591   0.526  u5/oerr (u5/oerr)
+     LUT3:I1->O            1   0.704   0.420  u5/intn1 (intn_OBUF)
+     OBUF:I->O                 3.272          intn_OBUF (intn)
+    ----------------------------------------
+    Total                      5.513ns (4.567ns logic, 0.946ns route)
+                                       (82.8% logic, 17.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 't11'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              5.597ns (Levels of Logic = 2)
+  Source:            u5/buff (FF)
+  Destination:       data<0> (PAD)
+  Source Clock:      t11 rising
+
+  Data Path: u5/buff to data<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.591   0.610  u5/buff (u5/buff)
+     LUT3:I1->O            1   0.704   0.420  u5/data_0_mux00001 (u5/data_0_mux0000)
+     OBUFT:I->O                3.272          data_0_OBUFT (data<0>)
+    ----------------------------------------
+    Total                      5.597ns (4.567ns logic, 1.030ns route)
+                                       (81.6% logic, 18.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 't8'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              5.693ns (Levels of Logic = 2)
+  Source:            u3/q_6 (FF)
+  Destination:       data<6> (PAD)
+  Source Clock:      t8 rising
+
+  Data Path: u3/q_6 to data<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.591   0.706  u3/q_6 (u3/q_6)
+     LUT2:I0->O            1   0.704   0.420  u5/data_6_mux00001 (u5/data_6_mux0000)
+     OBUFT:I->O                3.272          data_6_OBUFT (data<6>)
+    ----------------------------------------
+    Total                      5.693ns (4.567ns logic, 1.126ns route)
+                                       (80.2% logic, 19.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'u5/rbuff_not0001'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              6.308ns (Levels of Logic = 2)
+  Source:            u5/rbuff (LATCH)
+  Destination:       data<7> (PAD)
+  Source Clock:      u5/rbuff_not0001 rising
+
+  Data Path: u5/rbuff to data<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDP_1:G->Q            9   0.676   0.899  u5/rbuff (u5/rbuff)
+     LUT2:I1->O            8   0.704   0.757  u5/data_0_and00001 (u5/data<0>_not0000_inv)
+     OBUFT:T->O                3.272          data_7_OBUFT (data<7>)
+    ----------------------------------------
+    Total                      6.308ns (4.652ns logic, 1.656ns route)
+                                       (73.7% logic, 26.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'u5/rint_cmp_eq0000'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              6.004ns (Levels of Logic = 2)
+  Source:            u5/rint (LATCH)
+  Destination:       data<7> (PAD)
+  Source Clock:      u5/rint_cmp_eq0000 falling
+
+  Data Path: u5/rint to data<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDP:G->Q              1   0.676   0.595  u5/rint (u5/rint)
+     LUT2:I0->O            8   0.704   0.757  u5/data_0_and00001 (u5/data<0>_not0000_inv)
+     OBUFT:T->O                3.272          data_7_OBUFT (data<7>)
+    ----------------------------------------
+    Total                      6.004ns (4.652ns logic, 1.352ns route)
+                                       (77.5% logic, 22.5% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.48 secs
+ 
+--> 
+
+Total memory usage is 273880 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   36 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
+

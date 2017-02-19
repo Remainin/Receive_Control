@@ -1,0 +1,32 @@
+# Reading C:/Modeltech_xe/tcl/vsim/pref.tcl 
+# do {waveOfctrl.fdo} 
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim XE vcom 5.6a Compiler 2002.04 Apr 29 2002
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity ctrl
+# -- Compiling architecture behavioral of ctrl
+# Model Technology ModelSim XE vcom 5.6a Compiler 2002.04 Apr 29 2002
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package textio
+# -- Loading package std_logic_textio
+# -- Compiling entity waveofctrl
+# -- Compiling architecture testbench_arch of waveofctrl
+# -- Loading entity ctrl
+# vsim -lib work -t 1ps waveOfctrl 
+# Loading C:/Modeltech_xe/win32xoem/../std.standard
+# Loading C:/Modeltech_xe/win32xoem/../ieee.std_logic_1164(body)
+# Loading C:/Modeltech_xe/win32xoem/../ieee.std_logic_arith(body)
+# Loading C:/Modeltech_xe/win32xoem/../ieee.std_logic_unsigned(body)
+# Loading C:/Modeltech_xe/win32xoem/../std.textio(body)
+# Loading C:/Modeltech_xe/win32xoem/../ieee.std_logic_textio(body)
+# Loading work.waveofctrl(testbench_arch)
+# Loading work.ctrl(behavioral)
+# .wave
+# .structure
+# .signals

@@ -1,0 +1,12 @@
+AR receive behavioral E:/xilink/5/receive/receive.vhd sub00/vhpl11 1404307609
+AR reg8 behavioral E:/xilink/5/receive/reg8.vhd sub00/vhpl05 1404307603
+EN sreg NULL E:/xilink/5/receive/sreg.vhd sub00/vhpl02 1404307600
+AR sreg behavioral E:/xilink/5/receive/sreg.vhd sub00/vhpl03 1404307601
+AR decode4 behavioral E:/xilink/5/receive/decode4.vhd sub00/vhpl07 1404307605
+EN decode4 NULL E:/xilink/5/receive/decode4.vhd sub00/vhpl06 1404307604
+EN ctrl NULL E:/xilink/5/receive/ctrl.vhd sub00/vhpl08 1404307606
+EN count4 NULL E:/xilink/5/receive/count4.vhd sub00/vhpl00 1404307598
+AR count4 behavioral E:/xilink/5/receive/count4.vhd sub00/vhpl01 1404307599
+AR ctrl behavioral E:/xilink/5/receive/ctrl.vhd sub00/vhpl09 1404307607
+EN receive NULL E:/xilink/5/receive/receive.vhd sub00/vhpl10 1404307608
+EN reg8 NULL E:/xilink/5/receive/reg8.vhd sub00/vhpl04 1404307602

@@ -1,0 +1,1 @@
+xst -ise "C:/Xilinx91i/receive/receive.ise" -intstyle ise -ifn count4.xst -ofn count4.syr

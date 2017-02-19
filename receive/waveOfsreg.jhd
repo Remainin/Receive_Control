@@ -1,0 +1,3 @@
+MODULE waveOfsreg
+SUBMODULE sreg
+INSTANCE UUT

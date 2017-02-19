@@ -1,0 +1,2 @@
+vhdl isim_temp "ctrl.vhd"
+vhdl isim_temp "testctrl.vhd"

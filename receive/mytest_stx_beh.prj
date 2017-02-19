@@ -1,0 +1,7 @@
+vhdl isim_temp "sreg.vhd"
+vhdl isim_temp "reg8.vhd"
+vhdl isim_temp "decode4.vhd"
+vhdl isim_temp "ctrl.vhd"
+vhdl isim_temp "count4.vhd"
+vhdl isim_temp "receive.vhd"
+vhdl isim_temp "mytest.vhd"

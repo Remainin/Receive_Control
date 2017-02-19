@@ -1,0 +1,3 @@
+MODULE waveOfctrl
+SUBMODULE ctrl
+INSTANCE UUT

@@ -1,0 +1,6 @@
+vhdl work "E:\xilink\5\receive\sreg.vhd"
+vhdl work "E:\xilink\5\receive\reg8.vhd"
+vhdl work "E:\xilink\5\receive\decode4.vhd"
+vhdl work "E:\xilink\5\receive\ctrl.vhd"
+vhdl work "E:\xilink\5\receive\count4.vhd"
+vhdl work "E:\xilink\5\receive\receive.vhd"

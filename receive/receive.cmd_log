@@ -1,0 +1,3 @@
+xst -ise "E:/xilinx 9.1/receive/receive.ise" -intstyle ise -ifn receive.xst -ofn receive.syr
+xst -ise "E:/xilinx 9.1/receive/receive.ise" -intstyle ise -ifn receive.xst -ofn receive.syr
+xst -intstyle ise -ifn "E:/xilink/5/receive/receive.xst" -ofn "E:/xilink/5/receive/receive.syr" 

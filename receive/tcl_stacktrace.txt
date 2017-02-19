@@ -1,0 +1,36 @@
+Fri Oct 12 17:27:28 中国标准时间 2012
+Trace back: cursorname: Cursor "10" out of range 0 to 1.
+    while executing
+".main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs.pw.wf.grid.cursor,wave.data cursorname 10"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $cursor_widget cursorname $cursor"
+    (object "::.main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs.pw.wf.tree" method "::WaveTree::cursorname" body line 9)
+    invoked from within
+"$treeObj cursorname $cursor_number"
+    (procedure "WaveCursorPopupMenuPostCmd" line 5)
+    invoked from within
+"WaveCursorPopupMenuPostCmd .main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs.pw.wf .main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs.pw.wf.w..."
+    ("eval" body line 1)
+    invoked from within
+"eval $post_cmd"
+    (procedure "::Vsimmenu::DefaultMenuPostCmd" line 9)
+    invoked from within
+"::Vsimmenu::DefaultMenuPostCmd .main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs.pw.wf.wavecursorpopup_popup {WaveCursorPopupMenuPostCmd .main_pa..."
+    invoked from within
+"$menu post $x $y"
+    (procedure "tk::PostOverPoint" line 33)
+    invoked from within
+"tk::PostOverPoint $menu $x $y $entry"
+    (procedure "tk_popup" line 7)
+    invoked from within
+"tk_popup $menu $x $y"
+    (procedure "mti_popup" line 7)
+    invoked from within
+"mti_popup $winname.wavecursorpopup_popup $X $Y"
+    (procedure "CursorPopup" line 11)
+    invoked from within
+"CursorPopup .main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs.pw.wf.grid.cursor,wave.data 770 1279 187 668"
+    (command bound to event)
+  2: ::tkerror {cursorname: Cursor "10" out of range 0 to 1.}
+  1: ::bgerror {cursorname: Cursor "10" out of range 0 to 1.}

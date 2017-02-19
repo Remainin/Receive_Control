@@ -1,0 +1,31 @@
+Running: D:\Xilinx\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o D:/ISE/receive/mytest_isim_beh.exe -prj D:/ISE/receive/mytest_beh.prj work.mytest 
+ISim O.87xd (signature 0xc3576ebc)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "D:/ISE/receive/sreg.vhd" into library work
+Parsing VHDL file "D:/ISE/receive/reg8.vhd" into library work
+Parsing VHDL file "D:/ISE/receive/decode4.vhd" into library work
+Parsing VHDL file "D:/ISE/receive/ctrl.vhd" into library work
+Parsing VHDL file "D:/ISE/receive/count4.vhd" into library work
+Parsing VHDL file "D:/ISE/receive/receive.vhd" into library work
+Parsing VHDL file "D:/ISE/receive/mytest.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture behavioral of entity count4 [count4_default]
+Compiling architecture behavioral of entity sreg [sreg_default]
+Compiling architecture behavioral of entity reg8 [reg8_default]
+Compiling architecture behavioral of entity decode4 [decode4_default]
+Compiling architecture behavioral of entity ctrl [ctrl_default]
+Compiling architecture behavioral of entity receive [receive_default]
+Compiling architecture behavior of entity mytest
+Time Resolution for simulation is 1ps.
+Waiting for 3 sub-compilation(s) to finish...
+Compiled 17 VHDL Units
+Built simulation executable D:/ISE/receive/mytest_isim_beh.exe
+Fuse Memory Usage: 33456 KB
+Fuse CPU Usage: 608 ms

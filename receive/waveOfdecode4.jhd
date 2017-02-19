@@ -1,0 +1,3 @@
+MODULE waveOfdecode4
+SUBMODULE decode4
+INSTANCE UUT

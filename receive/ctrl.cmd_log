@@ -1,0 +1,2 @@
+xst -ise "E:/receive/receive.ise" -intstyle ise -ifn ctrl.xst -ofn ctrl.syr
+xst -ise "E:/receive/receive.ise" -intstyle ise -ifn ctrl.xst -ofn ctrl.syr

@@ -1,0 +1,16 @@
+H 2141964 10 3 0 6 6 0 0 0 0
+L 4 ieee 19 $MODEL_TECH/../ieee
+L 3 std 18 $MODEL_TECH/../std
+L 4 work 4 work
+D 23 work.count4(behavioral) j[SD0<e9j23Ga]F_W4zM31 0 1
+D 21 work.ctrl(behavioral) ?EB]RoB>R_XV[kHH`8`3Q1 4 1
+D 24 work.decode4(behavioral) lkJdWH?I^nT>:[L=@ZDOl3 3 1
+D 24 work.receive(behavioral) >7=4P>EHYDnb?ZDV?92f_1 5 1
+D 21 work.reg8(behavioral) TaF5`a[PFH3zND6S91`:g2 2 1
+D 21 work.sreg(behavioral) ?5?_E>^0MF=]5EB73?PLn0 1 1
+2 0  0 kzCkgm>=_]UQiX`KIH3k_2 1 1 1
+2 0  0 DoF9SkogW1AEPIc0bZ0jZ1 0 0 1
+2 0  0 kS3ZFjOC=NWaATRBzCZ:k2 2 2 1
+2 0  0 KWdMefPT2z5gCPjFaIW=91 3 3 1
+2 0  0 2FjT7Ij`>0iDPPE622G>A1 4 4 1
+2 0  0 kAEfVY]AG5c1ihm6aMBSD1 5 5 1

@@ -1,0 +1,34 @@
+V3 23
+FL E:/xilink/5/receive/count4.vhd 2014/07/02.13:37:49 O.87xd
+EN work/count4 1404307598 FL E:/xilink/5/receive/count4.vhd PB ieee/std_logic_1164 1325952872 \
+      PB ieee/std_logic_arith 1325952873 PB ieee/STD_LOGIC_UNSIGNED 1325952875
+AR work/count4/Behavioral 1404307599 \
+      FL E:/xilink/5/receive/count4.vhd EN work/count4 1404307598
+FL E:/xilink/5/receive/ctrl.vhd 2014/07/02.13:38:34 O.87xd
+EN work/ctrl 1404307606 FL E:/xilink/5/receive/ctrl.vhd PB ieee/std_logic_1164 1325952872 \
+      PB ieee/std_logic_arith 1325952873 PB ieee/STD_LOGIC_UNSIGNED 1325952875
+AR work/ctrl/Behavioral 1404307607 \
+      FL E:/xilink/5/receive/ctrl.vhd EN work/ctrl 1404307606
+FL E:/xilink/5/receive/decode4.vhd 2014/07/02.13:38:34 O.87xd
+EN work/decode4 1404307604 FL E:/xilink/5/receive/decode4.vhd \
+      PB ieee/std_logic_1164 1325952872 PB ieee/std_logic_arith 1325952873 \
+      PB ieee/STD_LOGIC_UNSIGNED 1325952875
+AR work/decode4/Behavioral 1404307605 \
+      FL E:/xilink/5/receive/decode4.vhd EN work/decode4 1404307604
+FL E:/xilink/5/receive/receive.vhd 2014/07/02.13:38:34 O.87xd
+EN work/receive 1404307608 FL E:/xilink/5/receive/receive.vhd \
+      PB ieee/std_logic_1164 1325952872 PB ieee/std_logic_arith 1325952873 \
+      PB ieee/STD_LOGIC_UNSIGNED 1325952875
+AR work/receive/Behavioral 1404307609 \
+      FL E:/xilink/5/receive/receive.vhd EN work/receive 1404307608 CP count4 \
+      CP sreg CP reg8 CP decode4 CP ctrl
+FL E:/xilink/5/receive/reg8.vhd 2014/07/02.13:38:34 O.87xd
+EN work/reg8 1404307602 FL E:/xilink/5/receive/reg8.vhd PB ieee/std_logic_1164 1325952872 \
+      PB ieee/std_logic_arith 1325952873 PB ieee/STD_LOGIC_UNSIGNED 1325952875
+AR work/reg8/Behavioral 1404307603 \
+      FL E:/xilink/5/receive/reg8.vhd EN work/reg8 1404307602
+FL E:/xilink/5/receive/sreg.vhd 2014/07/02.13:38:34 O.87xd
+EN work/sreg 1404307600 FL E:/xilink/5/receive/sreg.vhd PB ieee/std_logic_1164 1325952872 \
+      PB ieee/std_logic_arith 1325952873 PB ieee/STD_LOGIC_UNSIGNED 1325952875
+AR work/sreg/Behavioral 1404307601 \
+      FL E:/xilink/5/receive/sreg.vhd EN work/sreg 1404307600
